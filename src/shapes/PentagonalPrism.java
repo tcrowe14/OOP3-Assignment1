@@ -37,4 +37,10 @@ public class PentagonalPrism extends Shape
         // The base area of a regular pentagon
         return (5.0 / 4.0) * Math.tan(Math.PI / 5) * Math.pow(sideLength, 2);
     }
+    
+    @Override
+    public String toString()
+    {
+    	return "\nThe " + getClass().getSimpleName() + " has a height of: " + getHeight() + " and a side length of: " + getSideLength() + ", giving it a volume of: " + getVolume();
+    }
 }

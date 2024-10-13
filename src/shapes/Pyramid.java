@@ -36,4 +36,10 @@ public class Pyramid extends Shape
     {
         return Math.pow(sideLength, 2);
     }
+    
+    @Override
+    public String toString()
+    {
+    	return "\nThe " + getClass().getSimpleName() + " has a height of: " + getHeight() + " and a base side length of: " + getBaseSideLength() + ", giving it a volume of: " + getVolume();
+    }
 }

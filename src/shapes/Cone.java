@@ -36,5 +36,11 @@ public class Cone extends Shape
 	{
 		return Math.PI * Math.pow(radius, 2);
 	}
+	
+    @Override
+    public String toString()
+    {
+    	return "\nThe " + getClass().getSimpleName() + " has a height of: " + getHeight() + " and a radius of: " + getRadius() + ", giving it a volume of: " + getVolume();
+    }
 
 }

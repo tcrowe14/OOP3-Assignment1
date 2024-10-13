@@ -16,7 +16,7 @@ public class OctagonalPrism extends Shape
 	}
 	
 	
-	public double getsideLength()
+	public double getSideLength()
 	{
 		return sideLength;
 	}
@@ -38,4 +38,10 @@ public class OctagonalPrism extends Shape
 		return 2 * Math.pow(sideLength, 2) * Math.tan(Math.PI / 8);
 	}
 
+    @Override
+    public String toString()
+    {
+    	return "\nThe " + getClass().getSimpleName() + " has a height of: " + getHeight() + " and a side length of: " + getSideLength() + ", giving it a volume of: " + getVolume();
+    }
+	
 }

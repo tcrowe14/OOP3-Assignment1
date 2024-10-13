@@ -15,7 +15,7 @@ public class SquarePrism extends Shape
         this.sideLength = sideLength;
     }
 
-    public double getsideLength() 
+    public double getSideLength() 
     {
         return sideLength;
     }
@@ -35,5 +35,11 @@ public class SquarePrism extends Shape
     public double getBaseArea() 
     {
         return Math.pow(sideLength, 2);
+    }
+    
+    @Override
+    public String toString()
+    {
+    	return "\nThe " + getClass().getSimpleName() + " has a height of: " + getHeight() + " and a side length of: " + getSideLength() + ", giving it a volume of: " + getVolume();
     }
 }
