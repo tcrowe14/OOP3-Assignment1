@@ -1,6 +1,7 @@
 package appDomain;
 
 import java.io.File;
+import utilities.QuickSort;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -27,10 +28,11 @@ public class AppDriver
 		// algorithm on a list of comparables to sort using either the
 		// natural order (comparable) or other orders (comparators)
 		
+		
+		
 		File shapeFile = new File("res/shapes1.txt");
 		Scanner scanFile = null;
 
-		
 		try
 		{
 			scanFile = new Scanner( shapeFile );
@@ -43,10 +45,11 @@ public class AppDriver
 		
 		// Take the first line in the text file (the total number of objects in file) and assign it as array size
 		int arrSize = Integer.parseInt(scanFile.nextLine());
+		
 		Shape[] shapeArray = new Shape[arrSize];
 		int i = 0;
 		
-		// Loop through the input file and create a new object for each line based on it's shape name
+		// Loop through the input file and create a new object for each line based on its shape name
 		while( scanFile.hasNext() )
 		{
 			
@@ -98,14 +101,18 @@ public class AppDriver
 					shapeArray[i] = new OctagonalPrism(height, sideLength);
 				}
 			}
+			
 		    i++;
-		    
-
 		}
+		scanFile.close();
+		
+		System.out.println("Original Array: ");
+		System.out.println(Arrays.toString(shapeArray));
+		
+		System.out.println("\nQuick Sorted");
+		QuickSort.quickSort(shapeArray, 0, shapeArray.length -1);
 		System.out.println(Arrays.toString(shapeArray));
 
-		
-		scanFile.close();
 	}
 
 }

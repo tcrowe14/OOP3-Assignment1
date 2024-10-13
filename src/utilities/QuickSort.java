@@ -1,32 +1,36 @@
 package utilities;
 
+import shapes.Shape;
+
 public class QuickSort
 {
-	static int partition(Integer[] array, int min, int max)
+	static int partition(Shape[] array, int min, int max)
 	{
-		int pivot = array[max];
+		Shape pivot = array[max];
 		int i = min - 1;
 		
 		for (int j = min; j <= max -1; j++)
 		{
-			if (array[j] < pivot)
+			if (array[j].getVolume() < pivot.getVolume())
 			{
 				i++;
 				swap(array, i, j);
 			}
 		}
+		
 		swap(array, i + 1, max);
 		return i + 1;
+		
 	}
 	
-	static void swap(Integer[] array, int i, int j)
+	static void swap(Shape[] array, int i, int j)
 	{
-		int swap = array[i];
+		Shape temp = array[i];
 		array[i] = array[j];
-		array[j] = swap;
+		array[j] = temp;
 	}
 	
-	static void quickSort(Integer[] array, int min, int max)
+	public static void quickSort(Shape[] array, int min, int max)
 	{
 		if (min < max)
 		{
