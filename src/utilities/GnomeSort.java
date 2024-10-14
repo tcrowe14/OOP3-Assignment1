@@ -3,6 +3,7 @@ import java.util.Comparator;
 
 import shapes.Shape;
 public class GnomeSort {
+	//Get gnomed
 	  public static void gnomeSort(Comparable<Shape> arr[]) 
 	  { 
 	      int index = 0; 
