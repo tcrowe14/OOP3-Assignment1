@@ -4,6 +4,7 @@ import java.io.File;
 import utilities.*;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -106,23 +107,36 @@ public class AppDriver
 		}
 		scanFile.close();
 		
-		long start, stop;
-		start = System.currentTimeMillis();
+//		long start, stop;
+//		start = System.currentTimeMillis();
+//		
+//		stop = System.currentTimeMillis();
+//		System.out.println("Time to sort: " + (stop - start) + " milliseconds");
 		
-		Comparator vac = new VolumeComparator();
+//		Comparator vac = new VolumeComparator();
+		
+//		System.out.println("\nGnome Sorted");
+//		SelectionSort.selectionSort(shapeArray);
+//		System.out.println(Arrays.toString(shapeArray));
+		
 		System.out.println("Original Array: ");
 		System.out.println(Arrays.toString(shapeArray));
 		
-		System.out.println("\nQuick Sorted");
+		System.out.println("\nQuick Sorted by Volume");
+
+		VolumeComparator qsVol = new VolumeComparator();	
+		QuickSort.quickSort(shapeArray, qsVol,  0, shapeArray.length -1);
+		System.out.println(Arrays.toString(shapeArray));
+		
+		System.out.println("\nQuick Sorted by Base Area");
+		BaseAreaComparator qsBase = new BaseAreaComparator();
+		QuickSort.quickSort(shapeArray, qsBase,  0, shapeArray.length -1);
+		System.out.println(Arrays.toString(shapeArray));
+		
+		System.out.println("\nQuick Sorted by Height");
 		QuickSort.quickSort(shapeArray, 0, shapeArray.length -1);
 		System.out.println(Arrays.toString(shapeArray));
 		
-		System.out.println("\nGnome Sorted");
-		SelectionSort.selectionSort(shapeArray);
-		System.out.println(Arrays.toString(shapeArray));
-		
-		stop = System.currentTimeMillis();
-		System.out.println("Time to sort: " + (stop - start) + " milliseconds");
 	}
 
 }
