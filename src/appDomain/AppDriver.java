@@ -28,10 +28,23 @@ public class AppDriver
 		// refer to demo02 KittySort.java on how to use a custom sorting
 		// algorithm on a list of comparables to sort using either the
 		// natural order (comparable) or other orders (comparators)
-		
-		
-		
-		File shapeFile = new File("res/shapes1.txt");
+		String fileArg = args[0];
+		String cmpArg = args[1].toLowerCase().replaceAll("-t", "");
+		String sortArg = args[2].toLowerCase().replaceAll("-s", "");
+		for(String arg: args) {
+			System.out.println(arg);
+			if(arg.substring(0,2).equals("-f") || arg.substring(0,2).equals("-F")) {
+				fileArg = arg.replaceAll("-f", "").replaceAll("-F", "");
+			}
+			else if(arg.substring(0,2).equals("-t") || arg.substring(0,2).equals("-T")) {
+				cmpArg = arg.replaceAll("-t", "").replaceAll("-T", "");
+			}
+			else {
+				sortArg = arg.replaceAll("-s", "").replaceAll("-S", "");
+			}
+		}
+
+		File shapeFile = new File(fileArg);
 		Scanner scanFile = null;
 
 		try
@@ -136,7 +149,9 @@ public class AppDriver
 		System.out.println("\nQuick Sorted by Height");
 		QuickSort.quickSort(shapeArray, 0, shapeArray.length -1);
 		System.out.println(Arrays.toString(shapeArray));
-		
+
+
+		System.out.println(fileArg+ " "+ cmpArg + " "+ sortArg);
 	}
 
 }
