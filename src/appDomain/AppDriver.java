@@ -1,16 +1,16 @@
 package appDomain;
 
 import java.io.File;
-import utilities.QuickSort;
+import utilities.*;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 import shapes.*;
 
 public class AppDriver
 {
-
 	public static void main( String[] args )
 	{
 		// TODO Auto-generated method stub
@@ -106,13 +106,23 @@ public class AppDriver
 		}
 		scanFile.close();
 		
+		long start, stop;
+		start = System.currentTimeMillis();
+		
+		Comparator vac = new VolumeComparator();
 		System.out.println("Original Array: ");
 		System.out.println(Arrays.toString(shapeArray));
 		
 		System.out.println("\nQuick Sorted");
 		QuickSort.quickSort(shapeArray, 0, shapeArray.length -1);
 		System.out.println(Arrays.toString(shapeArray));
-
+		
+		System.out.println("\nGnome Sorted");
+		SelectionSort.selectionSort(shapeArray);
+		System.out.println(Arrays.toString(shapeArray));
+		
+		stop = System.currentTimeMillis();
+		System.out.println("Time to sort: " + (stop - start) + " milliseconds");
 	}
 
 }
