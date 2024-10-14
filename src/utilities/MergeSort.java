@@ -1,11 +1,12 @@
 package utilities;
 
 import java.util.Comparator;
+import shapes.Shape;
 
 public class MergeSort 
 {
     @SuppressWarnings("unchecked")
-    private static <Shape extends Comparable<Shape>> void mergeSort(Shape[] unsortedArray)
+    public static <Shape extends Comparable<Shape>> void mergeSort(Shape[] unsortedArray)
     {
         int arraySize = unsortedArray.length;
 
@@ -34,7 +35,7 @@ public class MergeSort
     }
 
     @SuppressWarnings("unchecked")
-    private static <Shape> void mergeSort(Comparable<Shape> unsortedArray[], Comparator<? super Shape> comparator)
+    public static <Shape> void mergeSort(Comparable<Shape> unsortedArray[], Comparator<? super Shape> comparator)
     {
         int arraySize = unsortedArray.length;
 
