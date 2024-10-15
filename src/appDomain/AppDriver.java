@@ -185,15 +185,23 @@ public class AppDriver
 		{
 			if (cmpArg.equals("v"))
 			{
-
+				System.out.println("\nMerge Sorted by Volume");
+				VolumeComparator msVol = new VolumeComparator();	
+				MergeSort.mergeSort(shapeArray, msVol);
+				System.out.println(Arrays.toString(shapeArray));
 			}
 			else if (cmpArg.equals("h"))
 			{
-
+		        System.out.println("\nMerge Sorted by Height");
+		        MergeSort.mergeSort(shapeArray);
+		        System.out.println(Arrays.toString(shapeArray));
 			}
 			else if (cmpArg.equals("a"))
 			{
-
+		        System.out.println("\nMerge Sorted by Base Area");
+		        BaseAreaComparator msBase = new BaseAreaComparator();
+		        MergeSort.mergeSort(shapeArray, msBase);
+		        System.out.println(Arrays.toString(shapeArray));
 			}
 		}
 		else if (sortArg.equals("q"))
