@@ -5,18 +5,12 @@ import utilities.*;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
-
 import shapes.*;
 
 public class AppDriver
 {
 	public static void main( String[] args )
 	{
-		// TODO Auto-generated method stub
-
-		// refer to demo001 BasicFileIO.java for a simple example on how to
-		// read data from a text file
-
 		// refer to demo01 Test.java for an example on how to parse command
 		// line arguments and benchmarking tests
 
@@ -206,11 +200,11 @@ public class AppDriver
 		{
 			if (cmpArg.equals("v"))
 			{
-			System.out.println("\nQuick Sorted by Volume");
-			
-			VolumeComparator qsVol = new VolumeComparator();	
-			QuickSort.quickSort(shapeArray, qsVol,  0, shapeArray.length -1);
-			System.out.println(Arrays.toString(shapeArray));
+				System.out.println("\nQuick Sorted by Volume");
+				
+				VolumeComparator qsVol = new VolumeComparator();	
+				QuickSort.quickSort(shapeArray, qsVol,  0, shapeArray.length -1);
+				System.out.println(Arrays.toString(shapeArray));
 			}
 			else if (cmpArg.equals("h"))
 			{
