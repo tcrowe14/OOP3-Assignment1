@@ -4,8 +4,6 @@ import java.io.File;
 import utilities.*;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
 
 import shapes.*;
@@ -132,26 +130,121 @@ public class AppDriver
 //		SelectionSort.selectionSort(shapeArray);
 //		System.out.println(Arrays.toString(shapeArray));
 		
-		System.out.println("Original Array: ");
+		System.out.println(fileArg + " " + cmpArg + " " + sortArg);
+		
+		System.out.println("\nOriginal Array: ");
 		System.out.println(Arrays.toString(shapeArray));
 		
-		System.out.println("\nQuick Sorted by Volume");
+		if (!Arrays.asList("b", "s", "i", "m", "q", "z").contains(sortArg) || !Arrays.asList("v", "h", "a").contains(cmpArg))
+		{
+			System.out.println("\nIncorrect arguements entered \n\nUsage: \nFor file location use: \n\t-f[location] \n\tie: -fres/shapes1.txt \n"
+					+ "For sort by use: \n\t-t[v for volume, h for height, a for base area] \n\tie to sort by volume: -tv \n"
+					+ "For selecting the sorting algorithm use: \n\t-s[b for bubble, s for selection, i for insertion, m for merge, q for quick, z for gnome] \n\tie to use quick sort -sq \n\n"
+					+ "Full example for a file in the projects res folder, searching by height using bubble sort: \n\tjava -jar Sort.jar -fres/shapes1.txt -th -sb ");
+		}
+		else if (sortArg.equals("b"))
+		{
+			if (cmpArg.equals("v"))
+			{
 
-		VolumeComparator qsVol = new VolumeComparator();	
-		QuickSort.quickSort(shapeArray, qsVol,  0, shapeArray.length -1);
-		System.out.println(Arrays.toString(shapeArray));
-		
-		System.out.println("\nQuick Sorted by Base Area");
-		BaseAreaComparator qsBase = new BaseAreaComparator();
-		QuickSort.quickSort(shapeArray, qsBase,  0, shapeArray.length -1);
-		System.out.println(Arrays.toString(shapeArray));
-		
-		System.out.println("\nQuick Sorted by Height");
-		QuickSort.quickSort(shapeArray, 0, shapeArray.length -1);
-		System.out.println(Arrays.toString(shapeArray));
+			}
+			else if (cmpArg.equals("h"))
+			{
 
+			}
+			else if (cmpArg.equals("a"))
+			{
 
-		System.out.println(fileArg+ " "+ cmpArg + " "+ sortArg);
+			}
+		}
+		else if (sortArg.equals("s"))
+		{
+			if (cmpArg.equals("v"))
+			{
+
+			}
+			else if (cmpArg.equals("h"))
+			{
+
+			}
+			else if (cmpArg.equals("a"))
+			{
+
+			}
+		}
+		else if (sortArg.equals("i"))
+		{
+			if (cmpArg.equals("v"))
+			{
+
+			}
+			else if (cmpArg.equals("h"))
+			{
+
+			}
+			else if (cmpArg.equals("a"))
+			{
+
+			}
+		}
+		else if (sortArg.equals("m"))
+		{
+			if (cmpArg.equals("v"))
+			{
+
+			}
+			else if (cmpArg.equals("h"))
+			{
+
+			}
+			else if (cmpArg.equals("a"))
+			{
+
+			}
+		}
+		else if (sortArg.equals("q"))
+		{
+			if (cmpArg.equals("v"))
+			{
+			System.out.println("\nQuick Sorted by Volume");
+			
+			VolumeComparator qsVol = new VolumeComparator();	
+			QuickSort.quickSort(shapeArray, qsVol,  0, shapeArray.length -1);
+			System.out.println(Arrays.toString(shapeArray));
+			}
+			else if (cmpArg.equals("h"))
+			{
+				System.out.println("\nQuick Sorted by Height");
+				QuickSort.quickSort(shapeArray, 0, shapeArray.length -1);
+				System.out.println(Arrays.toString(shapeArray));
+			}
+			else if (cmpArg.equals("a"))
+			{
+				System.out.println("\nQuick Sorted by Base Area");
+				BaseAreaComparator qsBase = new BaseAreaComparator();
+				QuickSort.quickSort(shapeArray, qsBase,  0, shapeArray.length -1);
+				System.out.println(Arrays.toString(shapeArray));
+			}
+		}
+		else if (sortArg.equals("z"))
+		{
+			if (cmpArg.equals("v"))
+			{
+
+			}
+			else if (cmpArg.equals("h"))
+			{
+
+			}
+			else if (cmpArg.equals("a"))
+			{
+
+			}
+		}
+		else
+		{
+
+		}
 	}
 
 }
