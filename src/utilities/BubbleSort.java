@@ -1,22 +1,44 @@
 package utilities;
 
-	public class BubbleSort {
-		
-		public static void bubbleSort( Integer[] nums) {
-			boolean swapped = true;
-				
-			while (swapped) {
-				
-				swapped = false;
-				for (int i = 0; i < nums.length - 1; i++) {
-					if (nums [i] > nums [i+1]) {
-						swapped = true;
-						int temp = nums [i];
-						nums [i] = nums [i+1];
-						nums [i+1] = temp;
-					}
-				}
-			}
-		}
+import java.util.Comparator;
+import shapes.Shape;
+
+public class BubbleSort {
+
+    public static void bubbleSort(Shape[] shapes) {
+        boolean swapped = true;
+
+        while (swapped) {
+            swapped = false;
+            for (int i = 0; i < shapes.length - 1; i++) {
+                // Compare adjacent elements
+                if (shapes[i].compareTo(shapes[i + 1]) > 0) {
+                    swapped = true;
+                    // Swap shapes[i] and shapes[i + 1]
+                    Shape temp = shapes[i];
+                    shapes[i] = shapes[i + 1];
+                    shapes[i + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void bubbleSort(Shape[] shapes, Comparator<? super Shape> cmp) {
+        boolean swapped = true;
+
+        while (swapped) {
+            swapped = false;
+            for (int i = 0; i < shapes.length - 1; i++) {
+                // Compare adjacent elements using the comparator
+                if (cmp.compare(shapes[i], shapes[i + 1]) < 0) {
+                    swapped = true;
+                    // Swap shapes[i] and shapes[i + 1]
+                    Shape temp = shapes[i];
+                    shapes[i] = shapes[i + 1];
+                    shapes[i + 1] = temp;
+                }
+            }
+        }
+    }
 }
 
