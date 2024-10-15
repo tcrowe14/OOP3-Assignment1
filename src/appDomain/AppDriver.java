@@ -219,7 +219,7 @@ public class AppDriver
 //		System.out.println(Arrays.toString(shapeArray));
 
 
-		System.out.println(fileArg+ " "+ cmpArg + " "+ sortArg);
+		//System.out.println(fileArg+ " "+ cmpArg + " "+ sortArg);
 	}
 
 }

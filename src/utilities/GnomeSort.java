@@ -14,8 +14,8 @@ public class GnomeSort {
 	          if (arr[index].compareTo( (Shape) arr[index - 1]) < 0) 
 	              index++; 
 	          else { 
-	        	  Comparable<Shape> temp; 
-	              temp = arr[index]; 
+	        	  Shape temp; 
+	              temp = (Shape) arr[index]; 
 	              arr[index] = arr[index - 1]; 
 	              arr[index - 1] = temp; 
 	              index--; 
@@ -29,14 +29,14 @@ public class GnomeSort {
 	      while (index < length) { 
 	          if (index == 0) 
 	              index++; 
-	          if (cmp.compare((Shape) arr[index],( (Shape) arr[index - 1])) == -1) 
+	          if (cmp.compare((Shape) arr[index],( (Shape) arr[index - 1])) <0) 
 	              index++; 
 	          else { 
-	        	  Comparable<Shape> temp; 
-	              temp = arr[index]; 
+	        	  Shape temp; 
+	              temp = (Shape) arr[index]; 
 	              arr[index] = arr[index - 1]; 
 	              arr[index - 1] = temp; 
-	              index--; 
+	              index--;
 	          } 
 	      } 
 	  }
