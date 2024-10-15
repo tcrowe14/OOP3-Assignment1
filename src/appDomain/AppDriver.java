@@ -127,19 +127,21 @@ public class AppDriver
 		}
 		scanFile.close();
 
-//		long start, stop;
-//		start = System.currentTimeMillis();
-//		
-//		stop = System.currentTimeMillis();
-//		System.out.println("Time to sort: " + (stop - start) + " milliseconds");
+		long start, stop;
+		start = System.currentTimeMillis();
+		
+
 		
 //		Comparator vac = new VolumeComparator();
 		
 //		System.out.println("\nGnome Sorted");
 //		SelectionSort.selectionSort(shapeArray);
 //		System.out.println(Arrays.toString(shapeArray));
-		System.out.println("Original Array: ");
-		System.out.println(Arrays.toString(shapeArray));
+		System.out.println("\nOriginal Array: ");
+		for (Shape shape : shapeArray) {
+			System.out.print(shape.toString(cmpArg));
+		}
+		System.out.println();
 		if (cmpArg.equals("h")) {
 			switch(sortArg) {
 			case BSORT:
@@ -199,6 +201,8 @@ public class AppDriver
 		for (Shape shape : shapeArray) {
 			System.out.print(shape.toString(cmpArg));
 		}
+		stop = System.currentTimeMillis();
+		System.out.println("\nTime to sort: " + (stop - start) + " milliseconds");
 		
 //		System.out.println("Original Array: ");
 //		System.out.println(Arrays.toString(shapeArray));
