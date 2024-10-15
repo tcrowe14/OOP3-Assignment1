@@ -45,5 +45,23 @@ public abstract class Shape implements Comparable<Shape>
 			return 0;
 		}
 	}
+	@Override
+    public String toString()
+    {
+    	return "\nThe " + getClass().getSimpleName() + " has a height of: " + getHeight() + " and a base area of: " + getBaseArea() + ", giving it a volume of: " + getVolume();
+    }
+	public String toString(String type)
+    {
+		if(type.equals("h")) {
+			return "\nThe " + getClass().getSimpleName() + " has a height of: " + getHeight();
+		}
+		else if(type.equals("v")) {
+			return "\nThe " + getClass().getSimpleName() +" has a volume of: " + getVolume();
+		}
+		else {
+			return "\nThe " + getClass().getSimpleName() +" has a base area of: " + getBaseArea();
+		}
+    	
+    }
 
 }

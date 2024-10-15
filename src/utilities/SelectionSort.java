@@ -17,7 +17,7 @@ public class SelectionSort {
 			for(int ui = i+1;ui<shapes.length;ui++) 
 			{
 				//if a smaller number is found, the index of it is recorded so they can be swapped
-				if(shapes[ui].compareTo((Shape) shapes[mindex])==1) 
+				if(shapes[ui].compareTo((Shape) shapes[mindex])>=0) 
 				{
 					mindex = ui;
 				}
@@ -43,7 +43,7 @@ public class SelectionSort {
 			for(int ui = i+1;ui<shapes.length;ui++) 
 			{
 				//if a smaller number is found, the index of it is recorded so they can be swapped
-				if(cmp.compare((Shape)shapes[ui], (Shape) shapes[mindex])==1) 
+				if(cmp.compare((Shape)shapes[ui], (Shape) shapes[mindex])>=0) 
 				{
 					mindex = ui;
 				}
