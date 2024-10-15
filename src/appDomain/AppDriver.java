@@ -158,7 +158,6 @@ public class AppDriver
 			case GSORT:
 				GnomeSort.gnomeSort(shapeArray);
 				System.out.println("\nGnome Sorted");
-				
 				break;
 			}	
 		}

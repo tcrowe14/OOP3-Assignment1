@@ -112,7 +112,7 @@ public class MergeSort
 
         while (i < leftSize && j < rightSize) 
         {
-            if (left[i].compareTo(right[j]) <= 0) 
+            if (left[i].compareTo(right[j]) >= 0) 
             {
                 unsortedArray[k++] = left[i++];
             } else {
@@ -157,7 +157,7 @@ public class MergeSort
 
         while (i < leftSize && j < rightSize) 
         {
-            if (comparator.compare((Shape) left[i], (Shape) right[j]) <= 0) 
+            if (comparator.compare((Shape) left[i], (Shape) right[j]) >= 0) 
             {
                 unsortedArray[k++] = left[i++];
             } else {
