@@ -138,7 +138,8 @@ public class AppDriver
 		if (cmpArg.equals("h")) {
 			switch(sortArg) {
 			case BSORT:
-				System.out.println("Not Implemented yet ;)");
+				System.out.println("\\nBubble Sorted by Volume");
+				BubbleSort.bubbleSort(shapeArray);
 				break;
 			case ISORT:
 				System.out.println("Not Implemented yet ;)");
@@ -171,7 +172,8 @@ public class AppDriver
 			}
 			switch(sortArg) {
 			case BSORT:
-				System.out.println("Not Implemented yet ;)");
+				System.out.println("\nBubble Sorted by Volume");
+				BubbleSort.bubbleSort(shapeArray, cmp);
 				break;
 			case ISORT:
 				System.out.println("Not Implemented yet ;)");
