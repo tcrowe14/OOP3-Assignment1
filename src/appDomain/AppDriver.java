@@ -170,7 +170,7 @@ public class AppDriver
 		{
 			switch(sortArg) {
 			case BSORT:
-				System.out.println("\\nBubble Sorted by Height");
+				System.out.println("\nBubble Sorted by Height");
 				BubbleSort.bubbleSort(shapeArray);
 				break;
 			case ISORT:
