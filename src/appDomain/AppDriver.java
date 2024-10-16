@@ -47,14 +47,29 @@ public class AppDriver
 				sortArg = arg.toLowerCase().replaceAll("-s", "");
 			}
 		}
-        if (fileArg.startsWith("shape"))
-        {
-        	fileArg = "res/" + fileArg;
-        }
+		
+		if (fileArg.startsWith("shape")) 
+		{
+		    try 
+		    {
+		        fileArg = "res/" + fileArg;
+
+		        File file = new File(fileArg);
+		        if (!file.exists()) 
+		        {
+		            throw new FileNotFoundException("File not found: " + fileArg);
+		        }
+		    } 
+		    catch (FileNotFoundException e) 
+		    {
+		        e.printStackTrace();
+		    }
+		} 
 		else 
 		{
-			System.out.println("Invalid file name");
+		    System.out.println("Invalid File Name");
 		}
+
 		
 		System.out.println(fileArg);
 		System.out.println(cmpArg);
@@ -151,10 +166,11 @@ public class AppDriver
 			System.out.print(shape.toString(cmpArg));
 		}
 		System.out.println();
-		if (cmpArg.equals("h")) {
+		if (cmpArg.equals("h")) 
+		{
 			switch(sortArg) {
 			case BSORT:
-				System.out.println("\\nBubble Sorted by Volume");
+				System.out.println("\\nBubble Sorted by Height");
 				BubbleSort.bubbleSort(shapeArray);
 				break;
 			case ISORT:
@@ -162,33 +178,37 @@ public class AppDriver
 				break;
 			case SSORT:
 				SelectionSort.selectionSort(shapeArray);
-				System.out.println("\nSelection Sorted");
+				System.out.println("\nSelection Sorted by Height");
 				break;
 			case MSORT:
-				System.out.println("\nMerge Sorted by Volume");
+				System.out.println("\nMerge Sorted by Height");
 				MergeSort.mergeSort(shapeArray);
 				break;
 			case QSORT:
-				System.out.println("\nQuick Sorted by Volume");
+				System.out.println("\nQuick Sorted by Height");
 				QuickSort.quickSort(shapeArray, 0, shapeArray.length -1);
 				break;
 			case GSORT:
 				GnomeSort.gnomeSort(shapeArray);
-				System.out.println("\nGnome Sorted");
+				System.out.println("\nGnome Sorted by Height");
 				break;
 			}	
 		}
-		else {
+		else 
+		{
+			String sortInd = (" ");
 			Comparator cmp;
 			if(cmpArg.equals("v")) {
 				cmp = new VolumeComparator();
+				sortInd = ("Volume");
 			}
 			else {
 				cmp = new BaseAreaComparator();
+				sortInd = ("Base Area");
 			}
 			switch(sortArg) {
 			case BSORT:
-				System.out.println("\nBubble Sorted by Volume");
+				System.out.println("\nBubble Sorted by " + sortInd);
 				BubbleSort.bubbleSort(shapeArray, cmp);
 				break;
 			case ISORT:
@@ -196,25 +216,26 @@ public class AppDriver
 				break;
 			case SSORT:
 				SelectionSort.selectionSort(shapeArray, cmp);
-				System.out.println("\nSelection Sorted");
+				System.out.println("\nSelection Sorted by " + sortInd);
 				break;
 			case MSORT:
-				System.out.println("\nMerge Sorted by Volume");
+				System.out.println("\nMerge Sorted by " + sortInd);
 				MergeSort.mergeSort(shapeArray, cmp);
 				break;
 			case QSORT:
-				System.out.println("\nQuick Sorted by Volume");
+				System.out.println("\nQuick Sorted by " + sortInd);
 				QuickSort.quickSort(shapeArray, cmp,  0, shapeArray.length -1);
 				break;
 			case GSORT:
+				System.out.println("\nGnome Sorted by " + sortInd);
 				GnomeSort.gnomeSort(shapeArray, cmp);
-				System.out.println("\nGnome Sorted");
 				break;
 			}	
 		}
+		
 		if (shapeArray.length > 0) 
 		{
-		    System.out.println("\nFirst sorted shape:" + shapeArray[0].toString(cmpArg));
+		    System.out.println("\nFirst sorted shape: " + shapeArray[0].toString(cmpArg));
 
 		    if (shapeArray.length > 1000) 
 		    {
@@ -225,7 +246,7 @@ public class AppDriver
 		        }
 		        System.out.println();
 		    }
-		    System.out.println("Last sorted shape:" + shapeArray[shapeArray.length - 1].toString(cmpArg));
+		    System.out.println("Last sorted shape: " + shapeArray[shapeArray.length - 1].toString(cmpArg));
 		}
 
 
