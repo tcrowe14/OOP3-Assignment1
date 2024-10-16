@@ -12,7 +12,7 @@ import shapes.Shape;
 
 
 /**
- * Sorts the specified array of Shape objects in ascending order, according
+ * Sorts the specified array of Shape objects in descending order, according
  * to the natural ordering of its elements. All elements in the array must implement
  * the Comparable interface.
  *
@@ -52,7 +52,7 @@ public class MergeSort
     }
 
     /**
-     * Sorts the specified array of Shape objects in ascending order, according
+     * Sorts the specified array of Shape objects in descending order, according
      * to the order induced by the specified Comparator. All elements in the array
      * must be mutually comparable by the specified Comparator.
      *
