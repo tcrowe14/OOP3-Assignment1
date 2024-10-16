@@ -40,6 +40,6 @@ public class TriangularPrism extends Shape
     @Override
     public String toString()
     {
-    	return "\nThe " + getClass().getSimpleName() + " has a height of: " + getHeight() + " and a base area of: " + getBaseArea() + ", giving it a volume of: " + getVolume();
+    	return "The " + getClass().getSimpleName() + " has a height of: " + getHeight() + " and a base area of: " + getBaseArea() + ", giving it a volume of: " + getVolume() + "\n";
     }
 }

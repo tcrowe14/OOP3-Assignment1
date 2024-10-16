@@ -31,19 +31,35 @@ public class AppDriver
 		String fileArg = "";
 		String cmpArg = "";
 		String sortArg = "";
-		for(String arg: args) {
+		for(String arg: args) 
+		{
 			System.out.println(arg);
-			if(arg.substring(0,2).equals("-f") || arg.substring(0,2).equals("-F")) {
+			if(arg.substring(0,2).equals("-f") || arg.substring(0,2).equals("-F")) 
+			{
 				fileArg = arg.replaceAll("-f", "").replaceAll("-F", "");
 			}
-			else if(arg.toLowerCase().substring(0,2).equals("-t")) {
+			else if(arg.toLowerCase().substring(0,2).equals("-t")) 
+			{
 				cmpArg = arg.toLowerCase().replaceAll("-t", "");
 			}
-			else {
+			else 
+			{
 				sortArg = arg.toLowerCase().replaceAll("-s", "");
 			}
 		}
-
+        if (fileArg.startsWith("shape"))
+        {
+        	fileArg = "res/" + fileArg;
+        }
+		else 
+		{
+			System.out.println("Invalid file name");
+		}
+		
+		System.out.println(fileArg);
+		System.out.println(cmpArg);
+		System.out.println(sortArg);
+		
 		File shapeFile = new File(fileArg);
 		Scanner scanFile = null;
 
@@ -196,9 +212,24 @@ public class AppDriver
 				break;
 			}	
 		}
-		for (Shape shape : shapeArray) {
-			System.out.print(shape.toString(cmpArg));
+		if (shapeArray.length > 0) 
+		{
+		    System.out.println("\nFirst sorted shape:" + shapeArray[0].toString(cmpArg));
+
+		    if (shapeArray.length > 1000) 
+		    {
+		        System.out.println("\nThousandth values in between:");
+		        for (int j = 1000; j < shapeArray.length; j += 1000) 
+		        {
+		            System.out.print((j) + "-th Shape is: " + shapeArray[j].toString(cmpArg));
+		        }
+		        System.out.println();
+		    }
+		    System.out.println("Last sorted shape:" + shapeArray[shapeArray.length - 1].toString(cmpArg));
 		}
+
+
+
 		stop = System.currentTimeMillis();
 		System.out.println("\nTime to sort: " + (stop - start) + " milliseconds");
 		
