@@ -174,7 +174,8 @@ public class AppDriver
 				BubbleSort.bubbleSort(shapeArray);
 				break;
 			case ISORT:
-				System.out.println("Not Implemented yet ;)");
+				System.out.println("\nInsertion Sorted by Volume");
+				InsertionSort.insertionSort(shapeArray);
 				break;
 			case SSORT:
 				SelectionSort.selectionSort(shapeArray);
@@ -212,7 +213,8 @@ public class AppDriver
 				BubbleSort.bubbleSort(shapeArray, cmp);
 				break;
 			case ISORT:
-				System.out.println("Not Implemented yet ;)");
+				System.out.println("\nInsertion Sorted by Volume");
+				InsertionSort.insertionSort(shapeArray, cmp);
 				break;
 			case SSORT:
 				SelectionSort.selectionSort(shapeArray, cmp);
