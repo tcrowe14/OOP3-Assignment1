@@ -166,6 +166,7 @@ public class AppDriver
 			else 
 			{
 				String sortInd = (" ");
+				@SuppressWarnings("rawtypes")
 				Comparator cmp;
 				if(cmpArg.equals("v")) 
 				{

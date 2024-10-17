@@ -22,7 +22,7 @@ import shapes.Shape;
  */
 public class MergeSort 
 {
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "hiding" })
     public static <Shape extends Comparable<Shape>> void mergeSort(Shape[] unsortedArray)
     {
         int arraySize = unsortedArray.length;
@@ -62,7 +62,7 @@ public class MergeSort
      * @throws ClassCastException if the array contains elements that are not mutually comparable
      *         using the specified comparator
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "hiding" })
     public static <Shape> void mergeSort(Comparable<Shape> unsortedArray[], Comparator<? super Shape> comparator)
     {
         int arraySize = unsortedArray.length;
@@ -101,7 +101,8 @@ public class MergeSort
      * @param left            the left array to merge
      * @param right           the right array to merge
      */
-    private static <Shape extends Comparable<Shape>> void merge(Shape unsortedArray[], Shape left[], Shape right[])
+    @SuppressWarnings("hiding")
+	private static <Shape extends Comparable<Shape>> void merge(Shape unsortedArray[], Shape left[], Shape right[])
     {
         int leftSize = left.length;
         int rightSize = right.length;
@@ -145,7 +146,7 @@ public class MergeSort
      * @param right           the right array to merge
      * @param comparator      the comparator to determine the order of the elements
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "hiding" })
 	private static <Shape> void merge(Comparable<Shape> unsortedArray[], Comparable<Shape> left[], Comparable<Shape> right[], Comparator<? super Shape> comparator) 
     {
         int leftSize = left.length;
