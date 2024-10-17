@@ -248,7 +248,7 @@ public class AppDriver
 		stop = System.currentTimeMillis();
 		System.out.println("\nTime to sort: " + (stop - start) + " milliseconds");
 			
-		if (!Arrays.asList("b", "s", "i", "m", "q", "g", "h").contains(sortArg) || !Arrays.asList("v", "h", "a").contains(cmpArg))
+		if (!Arrays.asList("b", "s", "i", "m", "q", "g", "z").contains(sortArg) || !Arrays.asList("v", "h", "a").contains(cmpArg))
 		{
 			System.out.println("\nIncorrect arguements entered \n\nUsage: \nFor file location use: \n\t-f[location] \n\tie: -fres/shapes1.txt \n"
 					+ "For sort by use: \n\t-t[v for volume, h for height, a for base area] \n\tie to sort by volume: -tv \n"
