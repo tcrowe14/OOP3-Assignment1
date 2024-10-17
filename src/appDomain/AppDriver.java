@@ -16,6 +16,7 @@ public class AppDriver
 	public static final String MSORT = "m";
 	public static final String QSORT = "q";
 	public static final String GSORT = "g";
+	public static final String HSORT = "h";
 	@SuppressWarnings("unchecked")
 	public static void main( String[] args )
 	{
@@ -173,7 +174,13 @@ public class AppDriver
 				System.out.println("Gnome Sorted " + fileName + " by Height");
 				GnomeSort.gnomeSort(shapeArray);
 				break;
+			case HSORT:
+				System.out.println("Heap Sorted " + fileName + " by Height");
+				HeapSort.heapSort(shapeArray);
+				break;
 			}	
+				
+			
 		}
 		else 
 		{
@@ -217,7 +224,7 @@ public class AppDriver
 				break;
 			}	
 		}
-		
+
 		if (shapeArray.length > 0) 
 		{
 		    System.out.println("\nFirst sorted shape: " + shapeArray[0].toString(cmpArg));
@@ -237,7 +244,7 @@ public class AppDriver
 		stop = System.currentTimeMillis();
 		System.out.println("\nTime to sort: " + (stop - start) + " milliseconds");
 			
-		if (!Arrays.asList("b", "s", "i", "m", "q", "z").contains(sortArg) || !Arrays.asList("v", "h", "a").contains(cmpArg))
+		if (!Arrays.asList("b", "s", "i", "m", "q", "g", "h").contains(sortArg) || !Arrays.asList("v", "h", "a").contains(cmpArg))
 		{
 			System.out.println("\nIncorrect arguements entered \n\nUsage: \nFor file location use: \n\t-f[location] \n\tie: -fres/shapes1.txt \n"
 					+ "For sort by use: \n\t-t[v for volume, h for height, a for base area] \n\tie to sort by volume: -tv \n"
