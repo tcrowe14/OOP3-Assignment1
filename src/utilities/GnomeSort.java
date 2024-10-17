@@ -4,36 +4,35 @@ import java.util.Comparator;
 import shapes.Shape;
 public class GnomeSort {
 	//Get gnomed
-	  public static void gnomeSort(Shape shapes[]) 
-	  { 
+	  public static void gnomeSort(Comparable<Shape> shapes[]) { 
 	      int index = 0; 
 	      int length = shapes.length;
 	      while (index < length) { 
 	          if (index == 0) 
 	              index++; 
-	          if (shapes[index].compareTo(shapes[index - 1]) < 0) 
+	          if (shapes[index].compareTo((Shape) shapes[index - 1]) < 0) 
 	              index++; 
 	          else { 
 	        	  Shape temp; 
-	              temp = shapes[index]; 
+	              temp = (Shape) shapes[index]; 
 	              shapes[index] = shapes[index - 1]; 
 	              shapes[index - 1] = temp; 
 	              index--; 
 	          } 
 	      } 
 	  }
-	public static void gnomeSort(Shape shapes[], Comparator<? super Shape> cmp) 
-	  { 
+	public static void gnomeSort(Comparable <Shape> shapes[], Comparator<? super Shape> cmp) { 
 	      int index = 0; 
 	      int length = shapes.length;
 	      while (index < length) { 
 	          if (index == 0) 
 	              index++; 
-	          if (cmp.compare(shapes[index],(shapes[index - 1])) <0) 
+	          if (cmp.compare((Shape)shapes[index],(Shape)(shapes[index - 1])) <0) 
 	              index++; 
-	          else { 
+	          else {
+	        	  System.out.println(""+index);
 	        	  Shape temp; 
-	              temp = shapes[index]; 
+	              temp = (Shape) shapes[index]; 
 	              shapes[index] = shapes[index - 1]; 
 	              shapes[index - 1] = temp; 
 	              index--;
