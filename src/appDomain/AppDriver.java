@@ -47,17 +47,17 @@ public class AppDriver
             	sortArg = arg.toLowerCase().replaceAll("-s", "");
             }
         }
-        String fileName = "";
-        if (!fileArg.isEmpty()) 
-        {
-        	fileName = new File(fileArg).getName();
-            fileArg = "res/" + fileName;
-        } 
-        else 
-        {
-            System.err.println("No file name provided.");
-            return;
-        }
+//        String fileName = "";
+//        if (!fileArg.isEmpty()) 
+//        {
+        	String fileName = new File(fileArg).getName();
+//            fileArg = "res/" + fileName;
+//        } 
+//        else 
+//        {
+//            System.err.println("No file name provided.");
+//            return;
+//        }
 		
 		File shapeFile = new File(fileArg);
 		Scanner scanFile = null;
@@ -163,7 +163,7 @@ public class AppDriver
 				System.out.println("Selection Sorted " + fileName + " by Height");
 				break;
 			case MSORT:
-				System.out.println("Merge Sorted " + fileName + " by Height");
+				System.out.println("Merge Sorted " + fileArg + " by Height");
 				MergeSort.mergeSort(shapeArray);
 				break;
 			case QSORT:
