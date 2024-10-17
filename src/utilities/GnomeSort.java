@@ -10,9 +10,11 @@ public class GnomeSort {
 	      while (index < length) { 
 	          if (index == 0) 
 	              index++; 
-	          if (shapes[index].compareTo((Shape) shapes[index - 1]) < 0) 
+	          if (shapes[index].compareTo((Shape) shapes[index - 1]) <= 0) 
 	              index++; 
 	          else { 
+	        	  System.out.println(""+index);
+	        	  System.out.println(" " + shapes[index] + shapes[index-1]);
 	        	  Shape temp; 
 	              temp = (Shape) shapes[index]; 
 	              shapes[index] = shapes[index - 1]; 
@@ -27,7 +29,7 @@ public class GnomeSort {
 	      while (index < length) { 
 	          if (index == 0) 
 	              index++; 
-	          if (cmp.compare((Shape)shapes[index],(Shape)(shapes[index - 1])) <0) 
+	          if (cmp.compare((Shape)shapes[index],(Shape)(shapes[index - 1])) <= 0) 
 	              index++; 
 	          else {
 	        	  System.out.println(""+index);
