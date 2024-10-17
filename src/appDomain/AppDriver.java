@@ -176,7 +176,7 @@ public class AppDriver
 				break;
 			case HSORT:
 				System.out.println("Heap Sorted " + fileName + " by Height");
-				HeapSort.heapSort(shapeArray);
+				HeapSort.heapSort(shapeArray, null);
 				break;
 			}	
 				
@@ -221,6 +221,10 @@ public class AppDriver
 			case GSORT:
 				System.out.println("Gnome Sorted " + fileName +" by " + sortInd);
 				GnomeSort.gnomeSort(shapeArray, cmp);
+				break;
+			case HSORT:
+				System.out.println("Heap Sorted " + fileName + " by Height");
+				HeapSort.heapSort(shapeArray, cmp);
 				break;
 			}	
 		}
