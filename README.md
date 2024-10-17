@@ -41,11 +41,11 @@ This program takes an input file of shapes and 3 arguments to function (Note: Th
    - Heap Sort: -sh
    - Examples:
               Bubble Sort: java -jar Sort.jar -fshape1.txt -tv -sb
-              Insertion Sort: java -jar Sort.jar -fshape1.txt -TH -SI
-              Selection Sort: java -jar Sort.jar -fshape1.txt -tA -sS
-              Merge Sort: java -jar Sort.jar -f"C:\Code\Java\OOP3-Assignment1\shapes1.txt" -tv -sM
-              Quick Sort: java -jar Sort.jar -f"C:\Code\Java\OOP3-Assignment1\shapes1.txt" -tH -sq
-              Gnome Sort: java -jar Sort.jar -f"C:\Code\Java\OOP3-Assignment1\shapes1.txt" -tv -sg
-              Heap Sort: java -jar Sort.jar -f"C:\Code\Java\OOP3-Assignment1\shapes1.txt" -tA -sh
+              Insertion Sort: java -jar Sort.jar -SI -TH -fshape1.txt
+              Selection Sort: java -jar Sort.jar -tA -fshape1.txt -sS
+              Merge Sort: java -jar Sort.jar -tv -sM -f"C:\Code\Java\OOP3-Assignment1\shapes1.txt"
+              Quick Sort: java -jar Sort.jar -tH -sq -f"C:\Code\Java\OOP3-Assignment1\shapes1.txt" 
+              Gnome Sort: java -jar Sort.jar -tv -f"C:\Code\Java\OOP3-Assignment1\shapes1.txt" -sg
+              Heap Sort: java -jar Sort.jar -sh -f"C:\Code\Java\OOP3-Assignment1\shapes1.txt" -tA
                
 </pre>
