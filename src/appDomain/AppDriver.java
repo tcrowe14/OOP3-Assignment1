@@ -31,49 +31,32 @@ public class AppDriver
 		String fileArg = "";
 		String cmpArg = "";
 		String sortArg = "";
-		for(String arg: args) 
-		{
-			System.out.println(arg);
-			if(arg.substring(0,2).equals("-f") || arg.substring(0,2).equals("-F")) 
-			{
-				fileArg = arg.replaceAll("-f", "").replaceAll("-F", "");
-			}
-			else if(arg.toLowerCase().substring(0,2).equals("-t")) 
-			{
-				cmpArg = arg.toLowerCase().replaceAll("-t", "");
-			}
-			else 
-			{
-				sortArg = arg.toLowerCase().replaceAll("-s", "");
-			}
-		}
-		
-		if (fileArg.startsWith("shape")) 
-		{
-		    try 
-		    {
-		        fileArg = "res/" + fileArg;
-
-		        File file = new File(fileArg);
-		        if (!file.exists()) 
-		        {
-		            throw new FileNotFoundException("File not found: " + fileArg);
-		        }
-		    } 
-		    catch (FileNotFoundException e) 
-		    {
-		        e.printStackTrace();
-		    }
-		} 
-		else 
-		{
-		    System.out.println("Invalid File Name");
-		}
-
-		
-		System.out.println(fileArg);
-		System.out.println(cmpArg);
-		System.out.println(sortArg);
+        for (String arg : args) 
+        {
+            if (arg.substring(0,2).equals("-f") || arg.substring(0,2).equals("-F")) 
+            {
+            	fileArg = arg.replaceAll("-f", "").replaceAll("-F", "");
+            } 
+            else if(arg.toLowerCase().substring(0,2).equals("-t")) 
+            {
+            	cmpArg = arg.toLowerCase().replaceAll("-t", "");
+            } 
+            else
+            {
+            	sortArg = arg.toLowerCase().replaceAll("-s", "");
+            }
+        }
+        String fileName = "";
+        if (!fileArg.isEmpty()) 
+        {
+        	fileName = new File(fileArg).getName();
+            fileArg = "res/" + fileName;
+        } 
+        else 
+        {
+            System.err.println("No file name provided.");
+            return;
+        }
 		
 		File shapeFile = new File(fileArg);
 		Scanner scanFile = null;
@@ -151,47 +134,44 @@ public class AppDriver
 		}
 		scanFile.close();
 
+		System.out.println("Sorting...");
+		
 		long start, stop;
 		start = System.currentTimeMillis();
 		
+//		System.out.println("Original Array: ");
+//		for (Shape shape : shapeArray) 
+//		{
+//			System.out.print(shape.toString(cmpArg));
+//		}
 
-		
-//		Comparator vac = new VolumeComparator();
-		
-//		System.out.println("\nGnome Sorted");
-//		SelectionSort.selectionSort(shapeArray);
-//		System.out.println(Arrays.toString(shapeArray));
-		System.out.println("\nOriginal Array: ");
-		for (Shape shape : shapeArray) {
-			System.out.print(shape.toString(cmpArg));
-		}
-		System.out.println();
 		if (cmpArg.equals("h")) 
 		{
-			switch(sortArg) {
+			switch(sortArg) 
+			{
 			case BSORT:
-				System.out.println("\nBubble Sorted by Height");
+				System.out.println("Bubble Sorted " + fileName + " by Height");
 				BubbleSort.bubbleSort(shapeArray);
 				break;
 			case ISORT:
-				System.out.println("\nInsertion Sorted by Volume");
+				System.out.println("Insertion Sorted " + fileName + " by Volume");
 				InsertionSort.insertionSort(shapeArray);
 				break;
 			case SSORT:
 				SelectionSort.selectionSort(shapeArray);
-				System.out.println("\nSelection Sorted by Height");
+				System.out.println("Selection Sorted " + fileName + " by Height");
 				break;
 			case MSORT:
-				System.out.println("\nMerge Sorted by Height");
+				System.out.println("Merge Sorted " + fileName + " by Height");
 				MergeSort.mergeSort(shapeArray);
 				break;
 			case QSORT:
-				System.out.println("\nQuick Sorted by Height");
+				System.out.println("Quick Sorted " + fileName + " Height");
 				QuickSort.quickSort(shapeArray, 0, shapeArray.length -1);
 				break;
 			case GSORT:
+				System.out.println("Gnome Sorted " + fileName + " by Height");
 				GnomeSort.gnomeSort(shapeArray);
-				System.out.println("\nGnome Sorted by Height");
 				break;
 			}	
 		}
@@ -199,37 +179,40 @@ public class AppDriver
 		{
 			String sortInd = (" ");
 			Comparator cmp;
-			if(cmpArg.equals("v")) {
+			if(cmpArg.equals("v")) 
+			{
 				cmp = new VolumeComparator();
 				sortInd = ("Volume");
 			}
-			else {
+			else 
+			{
 				cmp = new BaseAreaComparator();
 				sortInd = ("Base Area");
 			}
-			switch(sortArg) {
+			switch(sortArg) 
+			{
 			case BSORT:
-				System.out.println("\nBubble Sorted by " + sortInd);
+				System.out.println("Bubble Sorted " + fileName +" by " + sortInd);
 				BubbleSort.bubbleSort(shapeArray, cmp);
 				break;
 			case ISORT:
-				System.out.println("\nInsertion Sorted by Volume");
+				System.out.println("Insertion Sorted " + fileName +" by " + sortInd);
 				InsertionSort.insertionSort(shapeArray, cmp);
 				break;
 			case SSORT:
 				SelectionSort.selectionSort(shapeArray, cmp);
-				System.out.println("\nSelection Sorted by " + sortInd);
+				System.out.println("Selection Sorted " + fileName +" by " + sortInd);
 				break;
 			case MSORT:
-				System.out.println("\nMerge Sorted by " + sortInd);
+				System.out.println("Merge Sorted " + fileName +" by " + sortInd);
 				MergeSort.mergeSort(shapeArray, cmp);
 				break;
 			case QSORT:
-				System.out.println("\nQuick Sorted by " + sortInd);
+				System.out.println("Quick Sorted " + fileName +" by " + sortInd);
 				QuickSort.quickSort(shapeArray, cmp,  0, shapeArray.length -1);
 				break;
 			case GSORT:
-				System.out.println("\nGnome Sorted by " + sortInd);
+				System.out.println("Gnome Sorted " + fileName +" by " + sortInd);
 				GnomeSort.gnomeSort(shapeArray, cmp);
 				break;
 			}	
@@ -251,14 +234,9 @@ public class AppDriver
 		    System.out.println("Last sorted shape: " + shapeArray[shapeArray.length - 1].toString(cmpArg));
 		}
 
-
-
 		stop = System.currentTimeMillis();
 		System.out.println("\nTime to sort: " + (stop - start) + " milliseconds");
-		
-
-		System.out.println(fileArg + " " + cmpArg + " " + sortArg);
-		
+			
 		if (!Arrays.asList("b", "s", "i", "m", "q", "z").contains(sortArg) || !Arrays.asList("v", "h", "a").contains(cmpArg))
 		{
 			System.out.println("\nIncorrect arguements entered \n\nUsage: \nFor file location use: \n\t-f[location] \n\tie: -fres/shapes1.txt \n"
@@ -266,7 +244,5 @@ public class AppDriver
 					+ "For selecting the sorting algorithm use: \n\t-s[b for bubble, s for selection, i for insertion, m for merge, q for quick, z for gnome] \n\tie to use quick sort -sq \n\n"
 					+ "Full example for a file in the projects res folder, searching by height using bubble sort: \n\tjava -jar Sort.jar -fres/shapes1.txt -th -sb ");
 		}
-
 	}
-
 }
