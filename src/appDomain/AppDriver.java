@@ -16,7 +16,7 @@ public class AppDriver
 	public static final String MSORT = "m";
 	public static final String QSORT = "q";
 	public static final String GSORT = "g";
-	public static final String HSORT = "h";
+	public static final String HSORT = "z";
 	@SuppressWarnings("unchecked")
 	public static void main( String[] args )
 	{
