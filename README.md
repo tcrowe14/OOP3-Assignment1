@@ -1,5 +1,6 @@
 # OOP3-Assignment1
- Complexity and Sorting
+<pre>
+Complexity and Sorting
 
 Installation and Usgae Instructions
 
@@ -47,3 +48,4 @@ This program takes an input file of shapes and 3 arguments to function (Note: Th
               Gnome Sort: java -jar Sort.jar -f"C:\Code\Java\OOP3-Assignment1\shapes1.txt" -tv -sg
               Heap Sort: java -jar Sort.jar -f"C:\Code\Java\OOP3-Assignment1\shapes1.txt" -tA -sh
                
+</pre>
