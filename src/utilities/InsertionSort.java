@@ -16,7 +16,6 @@ public class InsertionSort {
 	 * to the natural ordering of its elements. All elements in the array must implement
 	 * the Comparable interface.
 	 *
-	 * @param <Shape> the type of elements in the array, which must extend {@code Comparable}
 	 * @param shapes the array to be sorted
 	 * @throws ClassCastException if the array contains elements that are not mutually comparable
 	 */
