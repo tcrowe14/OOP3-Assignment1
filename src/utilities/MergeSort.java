@@ -16,9 +16,8 @@ import shapes.Shape;
  * to the natural ordering of its elements. All elements in the array must implement
  * the Comparable interface.
  *
- * @param <Shape>         the type of elements in the array, which must extend {@code Comparable}
+ * @param Shape         the type of elements in the array, which must extend Comparable
  * @param unsortedArray   the array to be sorted
- * @throws ClassCastException if the array contains elements that are not mutually comparable
  */
 public class MergeSort 
 {
@@ -56,11 +55,9 @@ public class MergeSort
      * to the order induced by the specified Comparator. All elements in the array
      * must be mutually comparable by the specified Comparator.
      *
-     * @param <Shape>         the type of elements in the array
+     * @param Shape         the type of elements in the array
      * @param unsortedArray   the array to be sorted
      * @param comparator      the comparator to determine the order of the array
-     * @throws ClassCastException if the array contains elements that are not mutually comparable
-     *         using the specified comparator
      */
     @SuppressWarnings({ "unchecked", "hiding" })
     public static <Shape> void mergeSort(Comparable<Shape> unsortedArray[], Comparator<? super Shape> comparator)
@@ -96,7 +93,7 @@ public class MergeSort
      * This method is used internally by the merge sort algorithm that sorts based on
      * the natural ordering of the elements.
      *
-     * @param <Shape>         the type of objects in the arrays, which must extend Comparable
+     * @param Shape        the type of objects in the arrays, which must extend Comparable
      * @param unsortedArray   the initial array and used to hold the merged result
      * @param left            the left array to merge
      * @param right           the right array to merge
@@ -140,7 +137,7 @@ public class MergeSort
      * This method is used internally by the merge sort algorithm that sorts based on
      * the order induced by the specified Comparator.
      *
-     * @param <Shape>         the type of objects in the arrays
+     * @param Shape       the type of objects in the arrays
      * @param unsortedArray   the initial array and used to hold the merged result
      * @param left            the left array to merge
      * @param right           the right array to merge
