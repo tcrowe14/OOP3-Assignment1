@@ -29,8 +29,6 @@ public class GnomeSort {
 	              index++; 
 	          //if the number to the left is smaller, it is swapped with the current index, and the index is decreased to compare with the next  index to the left
 	          else { 
-	        	  System.out.println(""+index);
-	        	  System.out.println(" " + shapes[index] + shapes[index-1]);
 	        	  Shape temp; 
 	              temp = (Shape) shapes[index]; 
 	              shapes[index] = shapes[index - 1]; 
@@ -61,7 +59,6 @@ public class GnomeSort {
 	              index++; 
 	          //if the number to the left is smaller, it is swapped with the current index, and the index is decreased to compare with the next  index to the left
 	          else {
-	        	  System.out.println(""+index);
 	        	  Shape temp; 
 	              temp = (Shape) shapes[index]; 
 	              shapes[index] = shapes[index - 1]; 
