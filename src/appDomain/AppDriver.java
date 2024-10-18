@@ -8,6 +8,13 @@ import java.util.Comparator;
 import java.util.Scanner;
 import shapes.*;
 
+/**
+ * Main class and driver for the program.
+ * Takes user arguments from the command line and parses them to determine
+ * the file location, whether to sort by Volume, Height, or Base Area and
+ * which sorting algorithm to use.
+ * 
+ */
 public class AppDriver
 {
 	public static final String BSORT = "b";

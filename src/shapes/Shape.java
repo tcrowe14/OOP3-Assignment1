@@ -1,6 +1,9 @@
 package shapes;
 
-
+/**
+ * The Shape class is an abstract class defining Height, Volume and base area and is implemented by all other shape classes.
+ * Includes a toString method and a compareTo method for shape objects. 
+ */
 public abstract class Shape implements Comparable<Shape>
 {
 	protected double height;

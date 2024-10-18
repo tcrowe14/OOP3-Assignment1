@@ -1,5 +1,8 @@
 package shapes;
 
+/**
+ * Octagonal Prism class defines the shapes height, volume, side length and base area.
+ */
 public class OctagonalPrism extends Shape
 {
 	private double sideLength;
