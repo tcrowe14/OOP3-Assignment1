@@ -1,6 +1,9 @@
 package shapes;
 
-public class Cylinder  extends Shape
+/**
+ * Cylinder class defines the shapes height, volume, radius and base area.
+ */
+public class Cylinder extends Shape
 {
 	private double radius;
 

@@ -2,6 +2,11 @@ package utilities;
 import java.util.Comparator;
 
 import shapes.Shape;
+/**
+ * Selection sort takes the largest element in the array and swaps it with the first element.
+ * Doing so each pass taking the next largest and placing it in the next index location until
+ * all elements are sorted in descending order.
+ */
 public class SelectionSort {
 	/**
 	 * Sorts the specified array of Shape objects in descending order, according

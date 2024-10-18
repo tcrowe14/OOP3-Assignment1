@@ -1,5 +1,8 @@
 package shapes;
 
+/**
+ * Pentagonal Prism class defines the shapes height, volume, side length and base area.
+ */
 public class PentagonalPrism extends Shape
 {
 	private double sideLength;

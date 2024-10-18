@@ -1,5 +1,8 @@
 package shapes;
 
+/**
+ * Cone class defines the shapes height, volume, radius and base area.
+ */
 public class Cone extends Shape
 {
 	private double radius;

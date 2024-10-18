@@ -3,6 +3,9 @@ package utilities;
 import java.util.Comparator;
 import shapes.Shape;
 
+/**
+ * Comparator class to compare volumes between shapes in the array.
+ */
 public class VolumeComparator implements Comparator<Shape> {
 
 	@Override
