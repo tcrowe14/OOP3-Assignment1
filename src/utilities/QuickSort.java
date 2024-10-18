@@ -17,12 +17,11 @@ public class QuickSort
      * Creates a partition pivot for the QuickSort algorithm to split the array and rearrange 
      * the Shape objects in descending order.
      *
-     * @param <Shape>         the type of elements in the array
-     * @param array		      the array to be sorted
-     * @param comparator      the comparator to determine the order of the array
-     * @param comparable      the comparable to determine the order of the array
+	 * @param array           the comparable array to determine the order of the array
+     * @param cmp             the comparator to determine the order of the array
      * @param min			  the lowest index position for the array
      * @param max             the last index position in the array
+     * @return 				  returns the index +1 to move to the next indexed position
      */
 	static int partition(Comparable<Shape> array[], Comparator<? super Shape> cmp, int min, int max)
 	{
@@ -48,10 +47,9 @@ public class QuickSort
      * method when compared to other objects and determined to need to be swapped
      * in the array.
      *
-     * @param <Shape>         the type of elements in the array
-     * @param array		      the array to be sorted
-     * @param comparable      the comparable to determine the order of the array
-     * @param i, j			  integers used as index positions to swap array objects
+     * @param array		      the comparable array to determine the order of the array
+     * @param i 			  integer used as index positions to swap array objects
+     * @param j			      integer used as index positions to swap array objects
      */
 	
 	static void swap(Comparable<Shape> array[], int i, int j)
@@ -66,10 +64,10 @@ public class QuickSort
      * to the order induced by the specified Comparator. All elements in the array
      * must be mutually comparable by the specified Comparator.
      *
-     * @param <Shape>         the type of elements in the array
-     * @param array		      the array to be sorted
-     * @param comparable      the comparable to determine the order of the array
-     * @param comparator      the comparator to determine the order of the array
+     * @param array		      the comparable array to be sorted
+     * @param min			  the lowest index position for the array
+     * @param max             the last index position in the array
+     * @param cmp             the comparator to determine the order of the array
      */
 	public static void quickSort(Comparable<Shape> array[], Comparator<? super Shape> cmp, int min, int max)
 	{
@@ -86,12 +84,11 @@ public class QuickSort
      * Creates a partition pivot for the QuickSort algorithm to split the array and rearrange 
      * the Shape objects in descending order.
      *
-     * @param <Shape>         the type of elements in the array
-     * @param array		      the array to be sorted
-     * @param comparator      the comparator to determine the order of the array
-     * @param comparable      the comparable to determine the order of the array
+     * @param array		      the comparable array to be sorted
      * @param min			  the lowest index position for the array
      * @param max             the last index position in the array
+     * @return 				  returns the index +1 to move to the next indexed position
+
      */
 	
 	static int partition(Comparable<Shape> array[], int min, int max)
@@ -117,9 +114,7 @@ public class QuickSort
      * Creates a partition pivot for the QuickSort algorithm to split the array and rearrange 
      * the Shape objects in descending order.
      *
-     * @param <Shape>         the type of elements in the array
-     * @param array		      the array to be sorted
-     * @param comparable      the comparable to determine the order of the array
+     * @param array		      the comparable array to be sorted
      * @param min			  the lowest index position for the array
      * @param max             the last index position in the array
      **/ 
